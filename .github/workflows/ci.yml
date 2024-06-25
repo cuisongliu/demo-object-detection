@@ -27,10 +27,6 @@ jobs:
     - name: init wasmedge environment
       run: ./scripts/wasmedge-init.sh
 
-    - name: Install Rust target for wasm
-      run: |
-        rustup target add wasm32-wasi
-
     - name: init ffmpeg dependencies
       run: ./scripts/ffmpeg-deps-init.sh
     - name: Example
