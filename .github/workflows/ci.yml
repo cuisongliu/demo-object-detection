@@ -29,11 +29,8 @@ jobs:
 
     - name: init ffmpeg dependencies
       run: ./scripts/ffmpeg-deps-init.sh
-    - name: Example
-      run: |
-        cargo build --target wasm32-wasi --release
-        wasmedge compile target/wasm32-wasi/release/demo-object-detection.wasm demo-object-detection.wasm
-        wasmedge --dir .:. demo-object-detection.wasm example.jpg output.jpg
+    - name: init ffmpeg dependencies
+      run: ./scripts/cargo-build.sh
 
     - uses: actions/upload-artifact@v3
       with:
